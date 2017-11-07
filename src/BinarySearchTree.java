@@ -47,7 +47,10 @@ public class BinarySearchTree {
             System.out.println("Tree is empty, delete() isn't possible");
         }
 
+        while (!nodeQueue.isEmpty()) {
+            Node p = nodeQueue.remove();
 
+        }
         size--;
     }
 
