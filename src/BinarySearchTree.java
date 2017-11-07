@@ -55,10 +55,12 @@ public class BinarySearchTree {
     }
 
     public int search(int data) {
+
         return 0;
     }
 
     public int access(int index) {
+
         return 0;
     }
 

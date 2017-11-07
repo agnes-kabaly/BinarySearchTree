@@ -1,6 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
+
         BinarySearchTree binarySearchTree = new BinarySearchTree();
         System.out.println(binarySearchTree.getSize());
         binarySearchTree.insert(112);
@@ -11,6 +12,7 @@ public class Main {
         binarySearchTree.insert(248);
         binarySearchTree.insert(8);
         System.out.println(binarySearchTree.getSize());
+
     }
 
 
