@@ -44,27 +44,34 @@ public class BinarySearchTree {
         Queue<Node> childQueue = new LinkedList<>();
         if (root == null) {
             System.out.println("Tree is empty, delete() isn't possible");
-        } else {
+        } else if (root.getData() != data){
             nodeQueue.add(root);
         }
-        while (!nodeQueue.isEmpty()) {
-            Node p = nodeQueue.remove();
-            if (p.getData() >= data) {
-                if (p.getLeftChild() != null) {
-                    if (p.getLeftChild().getData() != data) {
-                        nodeQueue.add(p.getLeftChild());
-                    } else {
-                        childQueue.add(p.getLeftChild().getRightChild());
-                        p.setLeftChild(p.getLeftChild().getLeftChild());
+        if (root.getData() == data) {
+            childQueue.add(root.getLeftChild());
+            childQueue.add(root.getRightChild());
+            root = null;
+        } else {
+            while (!nodeQueue.isEmpty()) {
+                Node p = nodeQueue.remove();
+                if (p.getData() >= data) {
+                    if (p.getLeftChild() != null) {
+                        if (p.getLeftChild().getData() != data) {
+                            nodeQueue.add(p.getLeftChild());
+                        } else {
+                            childQueue.add(p.getLeftChild().getRightChild());
+                            p.setLeftChild(p.getLeftChild().getLeftChild());
+                        }
                     }
                 }
-            } if (p.getData() <= data) {
-                if (p.getRightChild() != null) {
-                    if (p.getRightChild().getData() != data) {
-                        nodeQueue.add(p.getRightChild());
-                    } else {
-                        childQueue.add(p.getRightChild().getLeftChild());
-                        p.setRightChild(p.getRightChild().getRightChild());
+                if (p.getData() <= data) {
+                    if (p.getRightChild() != null) {
+                        if (p.getRightChild().getData() != data) {
+                            nodeQueue.add(p.getRightChild());
+                        } else {
+                            childQueue.add(p.getRightChild().getLeftChild());
+                            p.setRightChild(p.getRightChild().getRightChild());
+                        }
                     }
                 }
             }
