@@ -21,7 +21,7 @@ public class Main {
         binarySearchTree.insert(53);
         System.out.println(binarySearchTree.getSize());
         System.out.println("");
-        binarySearchTree.delete(14);
+        binarySearchTree.delete(27);
         System.out.println(binarySearchTree.getSize());
 
 

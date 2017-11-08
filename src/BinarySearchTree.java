@@ -54,21 +54,30 @@ public class BinarySearchTree {
                     if (p.getLeftChild().getData() != data) {
                         nodeQueue.add(p.getLeftChild());
                     } else {
+                        childQueue.add(p.getLeftChild().getRightChild());
                         p.setLeftChild(p.getLeftChild().getLeftChild());
                     }
-                    childQueue.add(p.getLeftChild().getRightChild());
-                    //insert(p.getLeftChild().getRightChild());
                 }
             } if (p.getData() <= data) {
                 if (p.getRightChild() != null) {
                     if (p.getRightChild().getData() != data) {
                         nodeQueue.add(p.getRightChild());
                     } else {
-                        p.setRightChild(p.getRightChild().getRightChild());
                         childQueue.add(p.getRightChild().getLeftChild());
-                        //insert(p.getRightChild().getLeftChild());
+                        p.setRightChild(p.getRightChild().getRightChild());
                     }
                 }
+            }
+        }
+        Node p;
+        while (!childQueue.isEmpty()) {
+            p = childQueue.remove();
+            insert(p.getData());
+            if (p.getLeftChild() != null) {
+                childQueue.add(p.getLeftChild());
+            }
+            if (p.getRightChild() != null) {
+                childQueue.add(p.getRightChild());
             }
         }
         size--;
