@@ -23,9 +23,17 @@ public class Main {
         System.out.println("BFS traversal:");
         binarySearchTree.BFStraversal();
 
-        System.out.println("");
+        System.out.println("Preorder:");
+        binarySearchTree.preorder(binarySearchTree.getRoot());
+
+        System.out.println("Inorder:");
+        binarySearchTree.inorder(binarySearchTree.getRoot());
+
+        System.out.println("Postorder:");
+        binarySearchTree.postorder(binarySearchTree.getRoot());
+
         binarySearchTree.delete(27);
-        System.out.println(binarySearchTree.getSize());
+        System.out.println("size: " + binarySearchTree.getSize());
 
     }
 

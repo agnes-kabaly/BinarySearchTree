@@ -80,6 +80,7 @@ public class BinarySearchTree {
         while (!childQueue.isEmpty()) {
             p = childQueue.remove();
             insert(p.getData());
+            size--;
             if (p.getLeftChild() != null) {
                 childQueue.add(p.getLeftChild());
             }
@@ -107,5 +108,37 @@ public class BinarySearchTree {
             }
         }
     }
+
+    // a-b-j
+    public void preorder(Node root) {
+        if (root != null) {
+            System.out.println(root.getData());
+            preorder(root.getLeftChild());
+            preorder(root.getRightChild());
+        }
+    }
+
+    // b-a-j
+    public void inorder(Node root) {
+        if (root != null) {
+            inorder(root.getLeftChild());
+            System.out.println(root.getData());
+            inorder(root.getRightChild());
+        }
+    }
+
+    // b-j-a
+    public void postorder(Node root) {
+        if (root != null) {
+            postorder(root.getLeftChild());
+            postorder(root.getRightChild());
+            System.out.println(root.getData());
+        }
+    }
+
+    public Node getRoot() {
+        return root;
+    }
+
 
 }
