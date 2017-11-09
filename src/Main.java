@@ -19,11 +19,13 @@ public class Main {
         binarySearchTree.insert(33);
         binarySearchTree.insert(40);
         binarySearchTree.insert(53);
-        System.out.println(binarySearchTree.getSize());
+
+        System.out.println("BFS traversal:");
+        binarySearchTree.BFStraversal();
+
         System.out.println("");
         binarySearchTree.delete(27);
         System.out.println(binarySearchTree.getSize());
-
 
     }
 

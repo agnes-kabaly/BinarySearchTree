@@ -90,18 +90,22 @@ public class BinarySearchTree {
         size--;
     }
 
-    public int search(int data) {
-
-        return 0;
-    }
-
-    public int access(int index) {
-
-        return 0;
-    }
-
-    public int visiting() {
-        return 0;
+    public void BFStraversal() {
+        Queue<Node> nodeQueue = new LinkedList<>();
+        Node p;
+        if (root != null) {
+            nodeQueue.add(root);
+        }
+        while (!nodeQueue.isEmpty()) {
+            p = nodeQueue.remove();
+            System.out.println(p.getData());
+            if (p.getLeftChild() != null) {
+                nodeQueue.add(p.getLeftChild());
+            }
+            if (p.getRightChild() != null) {
+                nodeQueue.add(p.getRightChild());
+            }
+        }
     }
 
 }
