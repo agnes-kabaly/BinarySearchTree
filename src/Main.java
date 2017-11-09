@@ -3,7 +3,8 @@ public class Main {
     public static void main(String[] args) {
 
         BinarySearchTree binarySearchTree = new BinarySearchTree();
-        System.out.println(binarySearchTree.getSize());
+        System.out.println("first size:" + binarySearchTree.getSize());
+
         binarySearchTree.insert(27);
         binarySearchTree.insert(14);
         binarySearchTree.insert(35);
@@ -33,6 +34,11 @@ public class Main {
         binarySearchTree.postorder(binarySearchTree.getRoot());
 
         binarySearchTree.delete(27);
+        System.out.println("size: " + binarySearchTree.getSize());
+
+        binarySearchTree.insert(10);
+        System.out.println("size: " + binarySearchTree.getSize());
+        binarySearchTree.BFStraversal();
         System.out.println("size: " + binarySearchTree.getSize());
 
     }

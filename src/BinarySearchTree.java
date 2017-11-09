@@ -21,19 +21,23 @@ public class BinarySearchTree {
         }
         while (!nodeQueue.isEmpty()) {
             Node p = nodeQueue.remove();
-            if (p.getData() >= newNode.getData()) {
+            if (p.getData() > data) {
                 if (p.getLeftChild() == null) {
                     p.setLeftChild(newNode);
                 } else {
                     nodeQueue.add(p.getLeftChild());
                 }
             }
-            if (p.getData() < newNode.getData()) {
+            if (p.getData() < data) {
                 if (p.getRightChild() == null) {
                     p.setRightChild(newNode);
                 } else {
                     nodeQueue.add(p.getRightChild());
                 }
+            }
+            if (p.getData() == data) {
+                System.out.println("This item is already added! Insert() isn't possible");
+                size--;
             }
         }
         size++;
