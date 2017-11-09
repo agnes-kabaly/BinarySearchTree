@@ -6,6 +6,7 @@ public class Main {
         System.out.println("first size:" + binarySearchTree.getSize());
 
         binarySearchTree.insert(27);
+        //binarySearchTree.delete(27);
         binarySearchTree.insert(14);
         binarySearchTree.insert(35);
         binarySearchTree.insert(10);

@@ -52,8 +52,12 @@ public class BinarySearchTree {
             nodeQueue.add(root);
         }
         if (root.getData() == data) {
-            childQueue.add(root.getLeftChild());
-            childQueue.add(root.getRightChild());
+            if (root.getLeftChild() != null) {
+                childQueue.add(root.getLeftChild());
+            }
+            if (root.getRightChild() != null) {
+                childQueue.add(root.getRightChild());
+            }
             root = null;
         } else {
             while (!nodeQueue.isEmpty()) {
