@@ -48,10 +48,7 @@ public class BinarySearchTree {
         Queue<Node> childQueue = new LinkedList<>();
         if (root == null) {
             System.out.println("Tree is empty, delete() isn't possible");
-        } else if (root.getData() != data){
-            nodeQueue.add(root);
-        }
-        if (root.getData() == data) {
+        } else if (root.getData() == data) {
             if (root.getLeftChild() != null) {
                 childQueue.add(root.getLeftChild());
             }
@@ -60,6 +57,7 @@ public class BinarySearchTree {
             }
             root = null;
         } else {
+            nodeQueue.add(root);
             while (!nodeQueue.isEmpty()) {
                 Node p = nodeQueue.remove();
                 if (p.getData() >= data) {
